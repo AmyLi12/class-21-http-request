@@ -97,6 +97,10 @@ app.delete('/api/produce/:id', async (req, res) => {
   }
 });
 
+app.get('/api/space', async (req, res) => {
+  const spaceItems = await db.collection('space').find().toArray();
+  res.status(200).json(spaceItems);
+});
 
 // --- Change nothing below this line ---
 
